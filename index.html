@@ -1,0 +1,1703 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="interface.css" media="all">
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="interface.js"></script>
+    <script type="text/javascript" src="sel-widget.js"></script>
+    <title>Table interface</title>
+</head>
+<body>
+
+<header class="cf">
+  <a href="#" class="button-plus">+</a>
+  <nav>
+    <a href="#" class="customer">Виталий Волков</a>
+    <a href="#" class="exit">Выход</a>
+  </nav>  
+</header>
+
+<div id="contain">
+
+  <nav>
+    <a href="#">Дела</a>
+    <a href="#" class="current">Клиенты</a>
+    <a href="#">Менеджеры</a>
+  </nav>
+
+<div id="contain-tab">
+  
+  <header>Компании</header>
+  <form>
+    <input class="search" type="text" placeholder="название, контактное лицо">
+    <a href="#" id="search-clear" class="search-close">x</a>
+  </form>
+  <form>
+    <div>По виду деятельности</div>
+    <select>
+      <option selected>Магазины</option>
+      <option>Все виды</option>
+      <option>Банковские услуги</option>
+      <option>Пивные компании</option>
+      <option>Магазины оргтехники</option>
+    </select>
+  </form>
+
+<div id="tab">
+  <header class="tab-head">
+    <table class="tab-container">
+      <tr>
+        <td class="name">
+          <span id="sort-name">
+            <i> &uarr;</i>
+            <!--<i class="arrow-down">&darr;</i>-->
+            <a href="#">Название</a>
+          </span>
+        </td>
+        <td class="activity"><span><a href="#">Виды деяльности</a></span></td>
+        <td class="contact"><span><a href="#">Контактное лицо</a></span></td>
+        <td class="earnings"><span><a href="#">Заработано, грн</a></span></td>
+        <td class="sum"><span><a href="#">Сумма, грн</a></span></td>
+        <td class="dealing"><span><a href="#">Сделки</a></span></td>
+      </tr>  
+    </table> 
+  </header>
+  <table class="tab-main tab-container">
+    <tr>
+      <td class="name"><span><a href="#">Фунтик</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Фунтик Фунтикович</a></span></td>
+      <td class="earnings"><span>132</span></td>
+      <td class="sum"><span>-</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">2</i>
+          <i class="success" href="#">3</i>
+          <i class="fail" href="#">14</i>
+
+          <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молоко</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины 1</option>
+                          <option>магазины 2</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                  <li>
+                    <label>Ответственный</label>
+                    <!--<select>
+                      <option selected>test</option>
+                    </select>-->
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr> 
+    <tr>
+      <td class="name"><span><a href="#">Поляна</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Лев Львович</a></span></td>
+      <td class="earnings"><span>-</span></td>
+      <td class="sum"><span>12</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">7</i>
+          <i class="success" href="#">6</i>
+          <i class="fail" href="#">1</i>
+
+          <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Банк Даниель</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Константин Рыкин</a></span></td>
+      <td class="earnings"><span>132345</span></td>
+      <td class="sum"><span>123567</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">22</i>
+          <i class="success" href="#">2</i>
+          <i class="fail" href="#">1</i>
+          
+          <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>  
+    <tr>
+      <td class="name"><span><a href="#">Виннер</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Руслан Попов</a></span></td>
+      <td class="earnings"><span>-</span></td>
+      <td class="sum"><span>1234</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">76</i>
+          <i class="success" href="#">62</i>
+          <i class="fail" href="#">19</i>
+          
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Виланд</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Андрей Шевченко</a></span></td>
+      <td class="earnings"><span>12323</span></td>
+      <td class="sum"><span>102323</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">22</i>
+          <i class="success" href="#">2</i>
+          <i class="fail" href="#">1</i>
+         
+          <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Гипфель</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Бецхлан Амаздаев</a></span></td>
+      <td class="earnings"><span>234567</span></td>
+      <td class="sum"><span>46786</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">61</i>
+          <i class="success" href="#">6</i>
+          <i class="fail" href="#">1</i>
+        
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Гюнсел</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Хлодов Грацишвили</a></span></td>
+      <td class="earnings"><span>789504</span></td>
+      <td class="sum"><span>6588</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">76</i>
+          <i class="success" href="#">62</i>
+          <i class="fail" href="#">19</i>
+        
+         <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Украинский автомобильный холдинг</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Ярослав Святославьев</a></span></td>
+      <td class="earnings"><span>12324</span></td>
+      <td class="sum"><span>10345</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">6</i>
+          <i class="success" href="#">5</i>
+          <i class="fail" href="#">13</i>
+
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Укараинский медиа холдинг</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Лев Яшин</a></span></td>
+      <td class="earnings"><span>123</span></td>
+      <td class="sum"><span>1234</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">61</i>
+          <i class="success" href="#">6</i>
+          <i class="fail" href="#">1</i>
+        
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>  
+    <tr>
+      <td class="name"><span><a href="#">УТ-1</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Сева Ципкин</a></span></td>
+      <td class="earnings"><span>234</span></td>
+      <td class="sum"><span>12300</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">2</i>
+          <i class="success" href="#">32</i>
+          <i class="fail" href="#">16</i>
+
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Универсальное агенство по продаже авиаперевозок</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Яша Львовский</a></span></td>
+      <td class="earnings"><span>134</span></td>
+      <td class="sum"><span>123678</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">6</i>
+          <i class="success" href="#">76</i>
+          <i class="fail" href="#">14</i>
+          
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Универсальное агенство</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Селена Львовская</a></span></td>
+      <td class="earnings"><span>1567</span></td>
+      <td class="sum"><span>12</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">46</i>
+          <i class="success" href="#">36</i>
+          <i class="fail" href="#">34</i>
+          
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><span><a href="#">Новый</a></span></td>
+      <td class="activity"><span>-</span></td>
+      <td class="contact"><span><a href="#">Новый человек</a></span></td>
+      <td class="earnings"><span>34</span></td>
+      <td class="sum"><span>345</span></td>
+      <td class="dealing">
+        <span>
+          <i class="mean" href="#">6</i>
+          <i class="success" href="#">56</i>
+          <i class="fail" href="#">45</i>
+
+           <a class="edit-icon" href="#"></a>
+        </span>
+        <!--edit customer-->
+        <div class="popup">
+          <div class="overlay"></div> 
+            <div class="edit">
+              <a href="#" id="edit-close" class="close"><i>&times;</i></a>
+              <form name="edit-customer">
+                <header>Редактировать клиента</header>
+                <ul>
+                  <li>
+                    <label for="name-company" class="">Название</label>
+                    <input id="name-company" type="text" placeholder="" class="large"></input>
+                  </li>
+                  <li>
+                    <label for="ud-name">Юридическое имя</label>
+                    <input id="ud-name" class="small" type="text" placeholder=""></input>
+                  </li>
+                  <li>
+                    <label>Виды деятельности</label>
+                    <ul class="add-select">
+                      <li>
+                        <select>
+                          <option selected>Мясо</option>
+                          <option>Молот</option>
+                          <option>Сало</option>
+                        </select>
+                        <a href="#" class="add add-choose">+</a>
+                      </li>
+                      <li>
+                         <select>
+                          <option selected>Магазины</option>
+                          <option>Магазины</option>
+                          <option>магазины</option>
+                        </select>
+                        <a href="#" class="add delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label for="adress">Адрес</label>
+                    <input id="adress" type="text" class="large"></input>
+                  </li>
+                  <li>
+                    <label>Телефоны</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" id="tel" class="small" value="123 323 34"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="34 38 39"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Почта</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="yulia@gmail.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="secre@gmail.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Сайты</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value="kigorw.com"></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value="test.com"></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Контактные лица</label>
+                    <ul class="add-select">
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="add-choose">+</a>
+                      </li>
+                      <li>
+                        <input type="text" class="small" value=""></input>
+                        <a href="#" class="delete-choose">-</a>
+                      </li>
+                    </ul>  
+                  </li>
+                  <li>
+                    <label>Описание</label>
+                    <textarea class="large">good client</textarea>
+                  </li>
+                </ul>
+                <button type="submit">Сохранить</button>
+              </form>
+              <div class="customer">
+                <div>Кто нужен?</div>
+                <div class="conner">Клиент</div>
+              </div>
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+  </table>
+  <div class="pagination">
+    <a href="#" class="arrow-left"> &larr; Ctrl</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#" class="current">3</a>
+    <a href="#">4</a>
+    ...
+    <a href="#">18</a>
+    <a href="#" class="arrow-right">Ctrl &rarr;</a>
+  </div>
+
+ 
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#tab').interface();
+
+        $('select').sel();    
+
+        $('.search').click( function() {
+          $('.search-close').toggle();
+
+        });
+
+    });
+    /*
+     - find arrow up left right down
+     - focus
+     - read about popup
+     - clear search
+     - change x close;
+     - icon for redactor
+     - 340, 355
+    */
+</script>
+</body>
+</html>
