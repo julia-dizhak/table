@@ -4,29 +4,71 @@ $.fn.interface = function(options) {
 
     var _tabMain = this;
   
-    //
-    _tabMain.each( function(i,value) {
 
-        function Tab() {
-            _tabItem = $(value);
-            _tab = _tabItem.find('.tab-main');
-            _tr = _tab.find('tr');
-            _tabNames = _tab.find('.name');
-                   
+    function Table(){
+      this.el = _tabMain;
+      this._tab = this.el.find('.tab-main');
+      this._tr = this._tab.find('tr');
+      var rows = [];
+      this._tr.each(function(i, value){
+         rows.push(new Row($(value)));
+      });
+      this.rows = rows;
+    }
+
+    Table.prototype.clearPlaceholder = function(){
+      this._tab.html('');
+    }
+
+    Table.prototype.refresh = function(){
+      this.clearPlaceholder();
+      var rows = this.rows;
+      var html = _.reduce(rows, function(memo, row){return memo + "<tr>"+row.el.html()+"</tr>"; }, '');
+      this._tab.html(html);
+    }
+
+    Table.prototype.sort = function(column, order_option){
+      // sorts original array of rows by some column and asc or desc order-option
+
+      var rows = _.sortBy(this.rows, function(item){
+            console.log(item.el.find('td:first-child').text());
+            return item.el.find('td:first-child').text();
+
+          }
+        );
+      this.rows = rows;
+      console.log(this.rows);
+      _.each(this.rows, function(item){console.log(item.el.find('td:first-child').text());});
+      this.refresh();
+    }
+
+
+    table = new Table();
+    console.log(table);
+
+    function Row(selector){
+      this.el = $(selector);
+    }
+
+    function Tab() {
+        _tabItem = $(value);
+        _tab = _tabItem.find('.tab-main');
+        _tr = _tab.find('tr');
+        _tabNames = _tab.find('.name');
         };
 
-        Tab.prototype.initialize = function() {  
-            this.sortNames(); 
+        Tab.prototype.initialize = function() {
+            this.sortNames();
             this.editCustomer();
             this.showPopup();
             this.hoverTr();
         };
 
-        Tab.prototype.sortNames = function() {      
+        Tab.prototype.sortNames = function() {
             
             _tr.each(function() {
                var name = $(this).children('td.name').text();
-               $(this).attr('data-name', name);   
+               $(this).attr('data-name', name);
             });
             
             var names = [];
@@ -113,11 +155,6 @@ $.fn.interface = function(options) {
                 );           
             }); 
         };
-
-        var tab_interface = new Tab();
-        tab_interface.initialize();
-
-    });
         
 };
 
