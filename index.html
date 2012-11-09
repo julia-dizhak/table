@@ -53,12 +53,12 @@
           <span id="sort-name">
             <i> &uarr;</i>
             <!--<i class="arrow-down">&darr;</i>-->
-            <a href="#">Название</a>
+            <a data-sorting-column=0 data-sorting-option="asc" href="#">Название</a>
           </span>
         </td>
-        <td class="activity"><span><a href="#">Виды деяльности</a></span></td>
-        <td class="contact"><span><a href="#">Контактное лицо</a></span></td>
-        <td class="earnings"><span><a href="#">Заработано, грн</a></span></td>
+        <td class="activity"><span><a  href="#">Виды деяльности</a></span></td>
+        <td class="contact"><span><a data-sorting-column=2 data-sorting-option="asc" href="#">Контактное лицо</a></span></td>
+        <td class="earnings"><span><a data-sorting-column=3 data-sorting-option="asc" href="#">Заработано, грн</a></span></td>
         <td class="sum"><span><a href="#">Сумма, грн</a></span></td>
         <td class="dealing"><span><a href="#">Сделки</a></span></td>
       </tr>  
@@ -1682,7 +1682,7 @@
     $(function(){
         $('#tab').interface();
 
-        // $('select').sel();    
+        $('select').sel();    
 
         // $('.search').click( function() {
         //   $('.search-close').toggle();
@@ -1690,15 +1690,6 @@
         // });
 
     });
-    /*
-     - find arrow up left right down
-     - focus
-     - read about popup
-     - clear search
-     - change x close;
-     - icon for redactor
-     - 340, 355
-    */
 </script>
 </body>
 </html>

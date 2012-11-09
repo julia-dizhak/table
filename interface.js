@@ -4,8 +4,7 @@ $.fn.interface = function(options) {
 
     var _tabMain = this;
   
-
-    function Table(){
+    function Table() {
       this.el = _tabMain;
       this._tab = this.el.find('.tab-main');
       this._tr = this._tab.find('tr');
@@ -14,13 +13,36 @@ $.fn.interface = function(options) {
          rows.push(new Row($(value)));
       });
       this.rows = rows;
+      this.header = $('.tab-head');
+      this.headerSorting();
     }
 
-    Table.prototype.clearPlaceholder = function(){
+    Table.prototype.headerSorting = function(){
+      var _this = this;
+      $('a[data-sorting-column]').click(function(){
+        var column = parseInt($(this).data('sorting-column'), 10),
+        sorting_option = $(this).data('sorting-option'),
+        new_sorting_option;
+
+        if (sorting_option == "asc"){
+          new_sorting_option = "desc";
+        }
+        else {
+          new_sorting_option = "asc";
+        }
+
+         _this.sort(column, sorting_option);
+         $(this).data('sorting-option', new_sorting_option);
+         return false;
+      });
+
+    }
+
+    Table.prototype.clearPlaceholder = function() {
       this._tab.html('');
     }
 
-    Table.prototype.refresh = function(){
+    Table.prototype.refresh = function() {
       this.clearPlaceholder();
       var rows = this.rows;
       var html = _.reduce(rows, function(memo, row){return memo + "<tr>"+row.el.html()+"</tr>"; }, '');
@@ -31,20 +53,22 @@ $.fn.interface = function(options) {
       // sorts original array of rows by some column and asc or desc order-option
 
       var rows = _.sortBy(this.rows, function(item){
-            console.log(item.el.find('td:first-child').text());
-            return item.el.find('td:first-child').text();
+            return item.el.find('td').eq(column).text();
 
-          }
-        );
+          });
+
+      if (order_option == 'desc'){
+        rows  = rows.reverse();
+      }
+
       this.rows = rows;
-      console.log(this.rows);
-      _.each(this.rows, function(item){console.log(item.el.find('td:first-child').text());});
       this.refresh();
+
+
     }
 
-
     table = new Table();
-    console.log(table);
+
 
     function Row(selector){
       this.el = $(selector);
